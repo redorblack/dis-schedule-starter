@@ -17,6 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class Rask {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
+
     @RScheduled(value = "xxxxxx",cron = "* 0/3 * * * ?", validity = 10, unit = TimeUnit.SECONDS)
     public void execute() {
         logger.info("我触发l===============");

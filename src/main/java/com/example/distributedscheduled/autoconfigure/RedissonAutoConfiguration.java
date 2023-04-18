@@ -37,8 +37,8 @@ import java.util.List;
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnClass({Redisson.class, RedisOperations.class})
 @AutoConfigureBefore(RedisAutoConfiguration.class)
-@ConditionalOnProperty(prefix = "distributed.scheduled", name = "enable", havingValue = "open")
-@EnableConfigurationProperties({RedissonProperties.class, RedisProperties.class, DistributedProperties.class})
+//@ConditionalOnProperty(prefix = "distributed.scheduled", name = "enable", havingValue = "open")
+@EnableConfigurationProperties({RedissonProperties.class, RedisProperties.class})
 public class RedissonAutoConfiguration {
     private static final String REDIS_PROTOCOL_PREFIX = "redis://";
     private static final String REDISS_PROTOCOL_PREFIX = "rediss://";

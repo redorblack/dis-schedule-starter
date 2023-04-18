@@ -14,14 +14,12 @@ import java.lang.reflect.Method;
  */
 public class DistributedScheduledAdvisor extends AbstractBeanFactoryPointcutAdvisor {
 
-
     private static final long serialVersionUID = -2629415015046434725L;
     private RSource rSource;
-
     /**
      * 切点
      */
-    private final ScheduledPointcut pointcut = new ScheduledPointcut() {
+    private final ScheduledPointcut scheduledPointcut = new ScheduledPointcut() {
         @Override
         protected RSource getCacheOperationSource() {
             return rSource;
@@ -29,7 +27,7 @@ public class DistributedScheduledAdvisor extends AbstractBeanFactoryPointcutAdvi
     };
 
     public void setClassFilter(ClassFilter classFilter) {
-        this.pointcut.setClassFilter(classFilter);
+        this.scheduledPointcut.setClassFilter(classFilter);
     }
 
     public void setrSource(RSource rSource) {
@@ -38,6 +36,6 @@ public class DistributedScheduledAdvisor extends AbstractBeanFactoryPointcutAdvi
 
     @Override
     public Pointcut getPointcut() {
-        return pointcut;
+        return scheduledPointcut;
     }
 }

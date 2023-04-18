@@ -13,7 +13,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = DistributedScheduledApplication.class)
 class DistributedScheduledApplicationTests {
 
@@ -28,22 +27,23 @@ class DistributedScheduledApplicationTests {
     private StringRedisTemplate redisTemplate;
 
     @Test
-    public void redis(){
-        redisTemplate.opsForValue().set("dsadsa","1221",10, TimeUnit.MINUTES);
+    public void redis() {
+        redisTemplate.opsForValue().set("dsadsa", "1221", 10, TimeUnit.MINUTES);
     }
 
     @Test
-    void ceshi() {
+    public void ceshi() {
         ExecutorService executorService = Executors.newFixedThreadPool(4);
-        executorService.execute(()-> rask.execute());
-        executorService.execute(()-> rask.execute());
-        executorService.execute(()-> rask.execute());
-        executorService.execute(()-> rask.execute());
-        executorService.execute(()-> rask.execute());
-        executorService.execute(()-> rask.execute());
+        executorService.execute(() -> rask.execute());
+        executorService.execute(() -> rask.execute());
+        executorService.execute(() -> rask.execute());
+        executorService.execute(() -> rask.execute());
+        executorService.execute(() -> rask.execute());
+        executorService.execute(() -> rask.execute());
 
         executorService.shutdown();
-        while (!executorService.isTerminated()){}
+        while (!executorService.isTerminated()) {
+        }
 
     }
 
